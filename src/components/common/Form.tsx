@@ -14,8 +14,12 @@ const Form = ({
   btn,
   btnPosition,
   containerClass,
+  handleSubmit,
 }: FormProps) => {
+
   const [inputValues, setInputValues] = useState([]);
+
+
   const [radioBtnValue, setRadioBtnValue] = useState('');
   const [textareaValues, setTextareaValues] = useState('');
   const [checkedState, setCheckedState] = useState<boolean[]>(new Array(checkboxes && checkboxes.length).fill(false));
@@ -52,7 +56,9 @@ const Form = ({
   };
 
   return (
-    <form id="contactForm" className={twMerge('', containerClass)}>
+    <form
+    onSubmit={(e)=>handleSubmit && handleSubmit(e, inputValues)}
+    id="contactForm" className={twMerge('', containerClass)}>
       {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
       {description && <p className="mb-4">{description}</p>}
       <div className="mb-6">

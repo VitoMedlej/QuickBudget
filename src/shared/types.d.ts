@@ -100,6 +100,7 @@ type FormProps = {
   btn: Button;
   btnPosition?: 'center' | 'right' | 'left';
   containerClass?: string;
+  handleSubmit?: (e, values: any) => void;
 };
 
 type Image = {
@@ -336,6 +337,18 @@ type SocialProofProps = Widget & {
 };
 
 type ContactProps = Widget & {
+  header?: Header;
+  content?: string;
+  items?: Array<Item>;
+  form: FormProps;
+};
+type RegisterProps = Widget & {
+  header?: Header;
+  content?: string;
+  items?: Array<Item>;
+  form: FormProps;
+};
+type LoginProps = Widget & {
   header?: Header;
   content?: string;
   items?: Array<Item>;

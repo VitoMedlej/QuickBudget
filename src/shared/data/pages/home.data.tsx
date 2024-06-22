@@ -55,7 +55,7 @@ export const heroHome: HeroProps = {
     text: 'Create Account',
     href: '/account/register',
     icon: IconCheck,
-    targetBlank: true,
+    targetBlank: false,
   },
   callToAction2: {
     text: 'Login',
